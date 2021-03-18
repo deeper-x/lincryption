@@ -13,13 +13,13 @@ function fencrypt() {
     #check gpg installation - exit 102
     if [ ! -x ${GPG} ];then
         echo "Missing gpg command"
-        return $GPGMISSING_ERR
+        return ${GPGMISSING_ERR}
     fi
 
     #check shred command - exit 105
     if [ ! -x ${SHRED} ];then
         echo "Missing shred command"
-        return $SHREDMISSING_ERR
+        return ${SHREDMISSING_ERR}
     fi
 
     #check input parameter - exit 103
@@ -29,7 +29,7 @@ function fencrypt() {
     fi
     
     # declaring assets
-    i_file=$1
+    i_file=${1}
     o_file="${1}.gpg"
 
     # start reading input
@@ -44,7 +44,7 @@ function fencrypt() {
     #check .mypass exists - exit 101 
     if [ ! -f ${PASSFILE} ];then
         echo "Missing password file ${PASSFILE}"
-        return $PASSFILE_ERR
+        return ${PASSFILE_ERR}
     fi
 
     # encryption
