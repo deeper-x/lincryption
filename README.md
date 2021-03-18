@@ -6,10 +6,10 @@ File encyption and decription in oneline
 Setup:
 
 ```sh
-echo "mypassword" ${HOME}/.mypass
-chmod +x fencrypt.sh
-chmod +x fdecrypt.sh
-export PATH=${PATH}:$(pwd)
+echo "mypassword" ${HOME}/.linpass
+chmod +x bin/fencrypt.sh
+chmod +x bin/fdecrypt.sh
+export PATH=${PATH}:$(pwd)/bin
 ```
 
 Usage:

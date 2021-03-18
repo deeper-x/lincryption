@@ -1,5 +1,5 @@
 #!/bin/bash
-declare -r PASSFILE=${HOME}"/.mypass"
+declare -r PASSFILE=${HOME}"/.linpass"
 declare -i EXIT_OK=0
 declare -i PASSFILE_ERR=101
 declare -i GPGMISSING_ERR=102
