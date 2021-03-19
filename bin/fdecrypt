@@ -9,17 +9,11 @@ declare -i SHREDMISSING_ERR=105
 declare -r GPG=$( command -v gpg )
 declare -r SHRED=$( command -v shred )
 
-function fencrypt() {
+function fdecrypt(){
     #check gpg installation - exit 102
     if [ ! -x ${GPG} ];then
         echo "Missing gpg command"
         return ${GPGMISSING_ERR}
-    fi
-
-    #check shred command - exit 105
-    if [ ! -x ${SHRED} ];then
-        echo "Missing shred command"
-        return ${SHREDMISSING_ERR}
     fi
 
     #check input parameter - exit 103
@@ -27,10 +21,10 @@ function fencrypt() {
         echo "Missing input file (as a parameter)"
         return ${FILEMISSING_ERR}
     fi
-    
+
     # declaring assets
     i_file=${1}
-    o_file="${1}.gpg"
+    o_file=${1%.*}
 
     # start reading input
     echo "Reading ${i_file}..."
@@ -47,17 +41,17 @@ function fencrypt() {
         return ${PASSFILE_ERR}
     fi
 
-    # encryption
-    echo "Encrypting file." 
+    # decryption
+    echo "Decrypting file." 
     echo "Waiting for password..."
-    ${GPG} --output "${o_file}" --passphrase $( cat ${PASSFILE} ) --symmetric ${i_file}
+    # gpg --output README.md --passphrase $( cat /home/deeper-x/.mypass ) --batch --decrypt README.md.gpg 
+    ${GPG} --output "${o_file}" --passphrase $( cat ${PASSFILE} ) --decrypt --batch ${i_file}
 
-    echo "Deleting clean file..."
+    echo "Deleting encrypted file..."
     ${SHRED} -zvu -n 3 ${i_file}
 
     echo -e "Written ${o_file}.\nOperation completed!"
     return ${EXIT_OK}
 }
 
-fencrypt ${1}
-    
+fdecrypt $1
