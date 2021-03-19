@@ -44,7 +44,6 @@ function fdecrypt(){
     # decryption
     echo "Decrypting file." 
     echo "Waiting for password..."
-    # gpg --output README.md --passphrase $( cat /home/deeper-x/.mypass ) --batch --decrypt README.md.gpg 
     ${GPG} --output "${o_file}" --passphrase $( cat ${PASSFILE} ) --decrypt --batch ${i_file}
 
     echo "Deleting encrypted file..."
