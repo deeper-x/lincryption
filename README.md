@@ -1,7 +1,6 @@
 # lincryption
 
-File encyption and decription in oneline
-
+File encryption/decryption
 
 Setup:
 
