@@ -1,4 +1,4 @@
-# Lin cryption
+# Lin Cryption
 
 Bash utility for file encryption/decryption, based on GnuPG (GPG) and shred (bash coreutils).
 
@@ -162,6 +162,7 @@ Test result:SUCCESS
 ### TODO
 1. scan for all files in input directory
 2. check for input file extensions
+
 
 
 Ref:
