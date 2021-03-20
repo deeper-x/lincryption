@@ -29,27 +29,38 @@ function fdecrypt(){
     # start reading input
     echo "Reading ${i_file}..."
 
-    #check input is a file - exit 104
+    # check input is a file - exit 104
     if [ ! -f ${i_file} ];then
         echo "Input parameter is not a file"
         return ${INPUTNOTAFILE_ERR}
     fi
 
-    #check .mypass exists - exit 101 
+    # check .mypass exists - exit 101 
     if [ ! -f ${PASSFILE} ];then
         echo "Missing password file ${PASSFILE}"
         return ${PASSFILE_ERR}
     fi
 
     # decryption
-    echo "Decrypting file." 
-    echo "Waiting for password..."
+    echo "Decrypting file..." 
     ${GPG} --output "${o_file}" --passphrase $( cat ${PASSFILE} ) --decrypt --batch ${i_file}
+    if [ $? -eq 0 ];then
+        echo ${SUCCESS_MSG}
+    else
+        echo ${FAILURE_MSG}
+    fi
 
-    echo "Deleting encrypted file..."
-    ${SHRED} -zvu -n 3 ${i_file}
+    # deletion
+    echo -n "Cleaning up..."
+    ${SHRED} -zu -n 3 ${i_file}
+    if [ $? -eq 0 ];then
+        echo ${SUCCESS_MSG}
+    else
+        echo ${FAILURE_MSG}
+    fi
 
-    echo -e "Written ${o_file}.\nOperation completed!"
+    # operation completed
+    echo "Result: ${o_file}"
     return ${EXIT_OK}
 }
 
