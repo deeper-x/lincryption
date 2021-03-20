@@ -1,7 +1,14 @@
 # lincryption
 
-Bash utility for file encryption/decryption.
-Lincryption simply reads your private 
+Bash utility for file encryption/decryption, with just two commands. 
+It's as simple as
+
+```sh
+# ENCRYPT
+$ fencrypt input_file.bla
+# DECRYPT
+$ fdecrypt input_file.bla.gpg
+```
 
 Setup:
 ```sh
@@ -86,3 +93,7 @@ demo.txt
 $ cat assets/demo.txt 
 hello, my secret data!
 ```
+
+### TODO
+1. scan for all files in input directory
+2. check for input file extensions
