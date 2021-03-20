@@ -1,6 +1,7 @@
 # lincryption
 
-Bash utility for file encryption/decryption, based on [GPG](https://linux.die.net/man/1/gpg){:target="_blank"} and [shred](https://man7.org/linux/man-pages/man1/shred.1.html){:target="_blank"}.
+Bash utility for file encryption/decryption, based on GPG(*) and shred (**).
+
 
 It's as simple as:
 ```sh
@@ -165,3 +166,9 @@ Test result:SUCCESS
 ### TODO
 1. scan for all files in input directory
 2. check for input file extensions
+
+
+
+Links:
+(*): https://linux.die.net/man/1/gpg
+(**): https://man7.org/linux/man-pages/man1/shred.1.html
