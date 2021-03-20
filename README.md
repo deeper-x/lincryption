@@ -1,16 +1,20 @@
 # lincryption
 
-Bash utility for file encryption/decryption, with just two commands. 
-It's as simple as
-
+Bash utility for file encryption/decryption. No interactive prompts, no esoterics flags: just 2 commands.   
+It's as simple as:
 ```sh
-# ENCRYPT
-$ fencrypt input_file.bla
-# DECRYPT
-$ fdecrypt input_file.bla.gpg
-```
+# ENCRYPT - it creates myfile.txt.gpg 
+$ fencrypt myfile.txt
 
-Requirements:
+# DECRYPT - it creates myfile.txt
+$ fdecrypt myfile.txt.gpg
+```
+It can be used in:
+1. batch scripts (e.g. for backups)
+2. as a call in external software
+3. CLI sessions (e.g. handling private docs with private/sensitive data stored in shared directories)  
+
+System requirements:
 ```sh
 $ bash --version
 GNU bash, version 5.0.17(1)-release (x86_64-pc-linux-gnu)
@@ -64,9 +68,6 @@ demo.txt
 $ cat assets/demo.txt 
 hello, my secret data!
 ```
-
-
-
 
 Test:
 ```sh
