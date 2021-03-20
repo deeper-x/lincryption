@@ -10,7 +10,7 @@ declare -r FAILURE_MSG="failed"
 declare -r GPG=$( command -v gpg )
 declare -r SHRED=$( command -v shred )
 
-# errors
+# return status list
 declare -i EXIT_OK=0
 declare -i PASSFILE_ERR=101
 declare -i GPGMISSING_ERR=102
@@ -20,7 +20,8 @@ declare -i SHREDMISSING_ERR=105
 declare -i DEC_GENERIC_ERR=106
 declare -i DEL_GENERIC_ERR=107
 
-function fdecrypt(){
+# main function
+function main(){
     #check gpg installation - exit 102
     if [ ! -x ${GPG} ];then
         echo "Missing gpg command"
@@ -77,4 +78,5 @@ function fdecrypt(){
     return ${EXIT_OK}
 }
 
-fdecrypt $1
+# calling main function
+main ${1}
