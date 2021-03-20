@@ -32,7 +32,7 @@ shred (GNU coreutils) 8.32
 First setup:
 ```sh
 #STEP 1: configuring key, we're about to use symmetric encryption
-echo "mypassword" > ${HOME}/.linpass
+echo "DUMMYP4SS0WRD" > ${HOME}/.linpass
 chmod 0400 ${HOME}/.linpass
 
 #STEP 2: making bins executable
@@ -102,7 +102,7 @@ Reading ./assets/28887.txt...
 + '[' '!' -f /home/deeper-x/.linpass ']'
 + echo -n 'File encryption...'
 File encryption...++ cat /home/deeper-x/.linpass
-+ /usr/bin/gpg --batch --output ./assets/28887.txt.gpg --passphrase DUMMYP4SS --symmetric ./assets/28887.txt
++ /usr/bin/gpg --batch --output ./assets/28887.txt.gpg --passphrase DUMMYP4SS0WRD --symmetric ./assets/28887.txt
 + '[' 0 -eq 0 ']'
 + echo success
 success
@@ -142,7 +142,7 @@ Reading ./assets/28887.txt.gpg...
 + echo 'Decrypting file...'
 Decrypting file...
 ++ cat /home/deeper-x/.linpass
-+ /usr/bin/gpg --output ./assets/28887.txt --passphrase DUMMYP4SS --decrypt --batch ./assets/28887.txt.gpg
++ /usr/bin/gpg --output ./assets/28887.txt --passphrase DUMMYP4SS0WRD --decrypt --batch ./assets/28887.txt.gpg
 gpg: AES256 encrypted data
 gpg: encrypted with 1 passphrase
 + '[' 0 -eq 0 ']'
