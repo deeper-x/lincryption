@@ -14,7 +14,7 @@ No interactive prompts, no esoterics flags: just 2 commands, one for encryption,
 It can be used in:
 1. DevOps / batch scripts
 2. in external software, consuming its interfaces ```fencrypt <filename>``` and ```fdecrypt <filename>``` 
-3. CLI interactive sessions (e.g. handling private docs with private/sensitive data stored in non-secure directories)  
+3. CLI interactive sessions (e.g. handling docs with private/sensitive data stored in non-secure directories)  
 
 System requirements:
 ```sh
