@@ -10,12 +10,11 @@ $ fencrypt myfile.txt
 # DECRYPT - it creates myfile.txt
 $ fdecrypt myfile.txt.gpg
 ```
-No interactive prompts, no esoterics flags: just 2 commands, one for encryption, one for decryption.
+No esoterics flags, no low-level complications: just 2 commands, encrypt & decrypt.
 It can be used in:
 1. DevOps / batch scripts
-2. in external software, consuming its interfaces ```fencrypt <filename>``` and ```fdecrypt <filename>``` 
+2. external software, consuming its interfaces ```fencrypt <filename>``` and ```fdecrypt <filename>``` 
 3. CLI interactive sessions (e.g. handling docs with private/sensitive data stored in non-secure directories)  
-
 System requirements:
 ```sh
 $ bash --version
