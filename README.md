@@ -1,6 +1,7 @@
 # lincryption
 
-Bash utility for file encryption/decryption. No interactive prompts, no esoterics flags: just 2 commands.   
+Bash utility for file encryption/decryption, based on [GPG](https://linux.die.net/man/1/gpg) and [shred](https://man7.org/linux/man-pages/man1/shred.1.html).
+
 It's as simple as:
 ```sh
 # ENCRYPT - it creates myfile.txt.gpg 
@@ -9,6 +10,7 @@ $ fencrypt myfile.txt
 # DECRYPT - it creates myfile.txt
 $ fdecrypt myfile.txt.gpg
 ```
+No interactive prompts, no esoterics flags: just 2 commands, one for encryption, one for decryption.
 It can be used in:
 1. DevOps / batch scripts
 2. in external software, consuming its interfaces ```fencrypt <filename>``` and ```fdecrypt <filename>``` 
