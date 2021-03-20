@@ -12,7 +12,7 @@ $ fdecrypt myfile.txt.gpg
 It can be used in:
 1. DevOps / batch scripts
 2. in external software, consuming its interfaces ```fencrypt <filename>``` and ```fdecrypt <filename>``` 
-3. CLI interactive sessions (e.g. handling private docs with private/sensitive data stored in shared directories)  
+3. CLI interactive sessions (e.g. handling private docs with private/sensitive data stored in non-secure directories)  
 
 System requirements:
 ```sh
