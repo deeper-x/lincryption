@@ -1,7 +1,6 @@
 # lincryption
 
-Bash utility for file encryption/decryption, based on GPG(*) and shred (**).
-
+Bash utility for file encryption/decryption, based on GnuPG (GPG) and shred (bash coreutils).
 
 It's as simple as:
 ```sh
@@ -168,7 +167,7 @@ Test result:SUCCESS
 2. check for input file extensions
 
 
-
-Links:
-(*): https://linux.die.net/man/1/gpg
-(**): https://man7.org/linux/man-pages/man1/shred.1.html
+Ref:
+1. https://www.gnu.org/software/bash/
+2. https://man7.org/linux/man-pages/man1/shred.1.html
+3. https://linux.die.net/man/1/gpg
