@@ -10,9 +10,9 @@ $ fencrypt myfile.txt
 $ fdecrypt myfile.txt.gpg
 ```
 It can be used in:
-1. batch scripts (e.g. for backups)
-2. as a call in external software
-3. CLI sessions (e.g. handling private docs with private/sensitive data stored in shared directories)  
+1. DevOps / batch scripts
+2. in external software, consuming its interfaces ```fencrypt <filename>``` and ```fdecrypt <filename>``` 
+3. CLI interactive sessions (e.g. handling private docs with private/sensitive data stored in shared directories)  
 
 System requirements:
 ```sh
