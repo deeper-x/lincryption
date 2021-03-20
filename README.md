@@ -1,4 +1,4 @@
-# lincryption
+# Lin cryption
 
 Bash utility for file encryption/decryption, based on GnuPG (GPG) and shred (bash coreutils).
 
@@ -15,6 +15,7 @@ It can be used in:
 1. DevOps / batch scripts
 2. external software, consuming its interfaces ```fencrypt <filename>``` and ```fdecrypt <filename>``` 
 3. CLI interactive sessions (e.g. handling docs with private/sensitive data stored in non-secure directories)  
+
 System requirements:
 ```sh
 $ bash --version
@@ -157,9 +158,6 @@ Decrypted file: ./assets/28887.txt
 + return 0
 Test result:SUCCESS
 ```
-
-
-
 
 ### TODO
 1. scan for all files in input directory
