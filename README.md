@@ -87,29 +87,29 @@ $ bash test.sh
 + declare -i SHREDMISSING_ERR=105
 + declare -i ENC_GENERIC_ERR=106
 + declare -i DEL_GENERIC_ERR=107
-+ main ./assets/4165.txt
++ main ./assets/28887.txt
 + '[' '!' -x /usr/bin/gpg ']'
 + '[' '!' -x /usr/bin/shred ']'
 + '[' 1 -eq 0 ']'
-+ i_file=./assets/4165.txt
-+ o_file=./assets/4165.txt.gpg
-+ echo 'Reading ./assets/4165.txt...'
-Reading ./assets/4165.txt...
-+ '[' '!' -f ./assets/4165.txt ']'
++ i_file=./assets/28887.txt
++ o_file=./assets/28887.txt.gpg
++ echo 'Reading ./assets/28887.txt...'
+Reading ./assets/28887.txt...
++ '[' '!' -f ./assets/28887.txt ']'
 + '[' '!' -f /home/deeper-x/.linpass ']'
 + echo -n 'File encryption...'
 File encryption...++ cat /home/deeper-x/.linpass
-+ /usr/bin/gpg --batch --output ./assets/4165.txt.gpg --passphrase 07R3BL4 --symmetric ./assets/4165.txt
++ /usr/bin/gpg --batch --output ./assets/28887.txt.gpg --passphrase DUMMYP4SS --symmetric ./assets/28887.txt
 + '[' 0 -eq 0 ']'
 + echo success
 success
 + echo -n 'Cleaning up...'
-Cleaning up...+ /usr/bin/shred -zu -n 3 ./assets/4165.txt
+Cleaning up...+ /usr/bin/shred -zu -n 3 ./assets/28887.txt
 + '[' 0 -eq 0 ']'
 + echo success
 success
-+ echo 'Encrypted file: ./assets/4165.txt.gpg.'
-Encrypted file: ./assets/4165.txt.gpg.
++ echo 'Encrypted file: ./assets/28887.txt.gpg.'
+Encrypted file: ./assets/28887.txt.gpg.
 + return 0
 + set -o nounset
 + declare -r PASSFILE=/home/deeper-x/.linpass
@@ -127,31 +127,31 @@ Encrypted file: ./assets/4165.txt.gpg.
 + declare -i SHREDMISSING_ERR=105
 + declare -i DEC_GENERIC_ERR=106
 + declare -i DEL_GENERIC_ERR=107
-+ main ./assets/4165.txt.gpg
++ main ./assets/28887.txt.gpg
 + '[' '!' -x /usr/bin/gpg ']'
 + '[' 1 -eq 0 ']'
-+ i_file=./assets/4165.txt.gpg
-+ o_file=./assets/4165.txt
-+ echo 'Reading ./assets/4165.txt.gpg...'
-Reading ./assets/4165.txt.gpg...
-+ '[' '!' -f ./assets/4165.txt.gpg ']'
++ i_file=./assets/28887.txt.gpg
++ o_file=./assets/28887.txt
++ echo 'Reading ./assets/28887.txt.gpg...'
+Reading ./assets/28887.txt.gpg...
++ '[' '!' -f ./assets/28887.txt.gpg ']'
 + '[' '!' -f /home/deeper-x/.linpass ']'
 + echo 'Decrypting file...'
 Decrypting file...
 ++ cat /home/deeper-x/.linpass
-+ /usr/bin/gpg --output ./assets/4165.txt --passphrase 07R3BL4 --decrypt --batch ./assets/4165.txt.gpg
++ /usr/bin/gpg --output ./assets/28887.txt --passphrase DUMMYP4SS --decrypt --batch ./assets/28887.txt.gpg
 gpg: AES256 encrypted data
 gpg: encrypted with 1 passphrase
 + '[' 0 -eq 0 ']'
 + echo success
 success
 + echo -n 'Cleaning up...'
-Cleaning up...+ /usr/bin/shred -zu -n 3 ./assets/4165.txt.gpg
+Cleaning up...+ /usr/bin/shred -zu -n 3 ./assets/28887.txt.gpg
 + '[' 0 -eq 0 ']'
 + echo success
 success
-+ echo 'Decrypted file: ./assets/4165.txt'
-Decrypted file: ./assets/4165.txt
++ echo 'Decrypted file: ./assets/28887.txt'
+Decrypted file: ./assets/28887.txt
 + return 0
 Test result:SUCCESS
 ```
