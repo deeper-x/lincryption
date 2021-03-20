@@ -1,13 +1,22 @@
 #!/bin/bash
+set -o nounset
+
+# declaration header
 declare -r PASSFILE=${HOME}"/.linpass"
+declare -r SUCCESS_MSG="success"
+declare -r FAILURE_MSG="failed"
+
+# preparing requirements
+declare -r GPG=$( command -v gpg )
+declare -r SHRED=$( command -v shred )
+
+# errors
 declare -i EXIT_OK=0
 declare -i PASSFILE_ERR=101
 declare -i GPGMISSING_ERR=102
 declare -i FILEMISSING_ERR=103
 declare -i INPUTNOTAFILE_ERR=104
 declare -i SHREDMISSING_ERR=105
-declare -r GPG=$( command -v gpg )
-declare -r SHRED=$( command -v shred )
 
 function fdecrypt(){
     #check gpg installation - exit 102
@@ -50,17 +59,18 @@ function fdecrypt(){
         echo ${FAILURE_MSG}
     fi
 
-    # deletion
+    # file deletion
     echo -n "Cleaning up..."
     ${SHRED} -zu -n 3 ${i_file}
     if [ $? -eq 0 ];then
         echo ${SUCCESS_MSG}
     else
         echo ${FAILURE_MSG}
+        return ${DEL_GENERIC_ERR}
     fi
 
     # operation completed
-    echo "Result: ${o_file}"
+    echo "Decrypted file: ${o_file}"
     return ${EXIT_OK}
 }
 

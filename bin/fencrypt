@@ -1,8 +1,16 @@
 #!/bin/bash
+set -o nounset
+
+# declaration header
 declare -r PASSFILE=${HOME}"/.linpass"
 declare -r SUCCESS_MSG="success"
 declare -r FAILURE_MSG="failed"
 
+# preparing requirements
+declare -r GPG=$( command -v gpg )
+declare -r SHRED=$( command -v shred )
+
+# errors
 declare -i EXIT_OK=0
 declare -i PASSFILE_ERR=101
 declare -i GPGMISSING_ERR=102
@@ -11,8 +19,6 @@ declare -i INPUTNOTAFILE_ERR=104
 declare -i SHREDMISSING_ERR=105
 declare -i ENC_GENERIC_ERR=106
 declare -i DEL_GENERIC_ERR=107
-declare -r GPG=$( command -v gpg )
-declare -r SHRED=$( command -v shred )
 
 function fencrypt() {
     #check gpg installation - exit 102
@@ -68,7 +74,7 @@ function fencrypt() {
     fi
 
     # file deletion
-    echo -n "Cleanin up..."
+    echo -n "Cleaning up..."
     ${SHRED} -zu -n 3 ${i_file}
     if [ $? -eq 0 ];then
         echo ${SUCCESS_MSG}
@@ -78,7 +84,7 @@ function fencrypt() {
     fi
 
     # operation completed
-    echo "Result: ${o_file}."
+    echo "Encrypted file: ${o_file}."
     return ${EXIT_OK}
 }
 
