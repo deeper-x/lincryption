@@ -1,6 +1,6 @@
 # lincryption
 
-Bash utility for file encryption/decryption, based on [GPG](https://linux.die.net/man/1/gpg) and [shred](https://man7.org/linux/man-pages/man1/shred.1.html).
+Bash utility for file encryption/decryption, based on [GPG](https://linux.die.net/man/1/gpg){:target="_blank"} and [shred](https://man7.org/linux/man-pages/man1/shred.1.html){:target="_blank"}.
 
 It's as simple as:
 ```sh
