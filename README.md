@@ -4,10 +4,10 @@ Bash utility for file encryption/decryption, based on GnuPG (GPG) and shred (bas
 
 It's as simple as:
 ```sh
-# ENCRYPT - it creates myfile.txt.gpg 
+# ENCRYPT - create myfile.txt.gpg 
 $ fencrypt myfile.txt
 
-# DECRYPT - it creates myfile.txt
+# DECRYPT - create myfile.txt
 $ fdecrypt myfile.txt.gpg
 ```
 No esoterics flags, no low-level complications: just 2 commands, encrypt & decrypt.
