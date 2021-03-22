@@ -10,7 +10,7 @@ $ fencrypt myfile.txt
 # DECRYPT - create myfile.txt
 $ fdecrypt myfile.txt.gpg
 ```
-No esoterics flags, no low-level complications: just 2 commands, encrypt & decrypt.
+No esoterics flags, no low-level complications: just 2 commands, ```fencrypt``` & ```fdecrypt```.
 
 It can be used in:
 1. DevOps / batch scripts
