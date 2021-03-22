@@ -1,6 +1,6 @@
-# Lin Cryption
+# Lin Cryption - AES256
 
-Bash utility for file encryption/decryption, based on GnuPG (GPG) and shred (bash coreutils).
+Bash utility for AES256 file encryption/decryption, based on GnuPG (GPG) and shred (bash coreutils).
 
 It's as simple as:
 ```sh
