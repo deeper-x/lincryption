@@ -4,10 +4,10 @@ Bash utility for AES256 symmetric file encryption. Based on GnuPG (GPG) and shre
 
 It's as simple as:
 ```sh
-# ENCRYPT - create myfile.txt.gpg 
+# ENCRYPT: it returns the encrypted myfile.txt.gpg 
 $ fencrypt myfile.txt
 
-# DECRYPT - create myfile.txt
+# DECRYPT: it returns the original myfile.txt file
 $ fdecrypt myfile.txt.gpg
 ```
 No esoterics flags, no low-level complications: just 2 commands, ```fencrypt``` & ```fdecrypt```.
